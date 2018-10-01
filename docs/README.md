@@ -1,13 +1,13 @@
 # Repositorio para la documentación del proyecto.
 Utilización de plantilla de jekyll para la github page.
 
-#Descripción
+## Descripción
 Creación de microservicios que permita gestionar una relación de una serie de actividades y eventos a unas coordenadas específicas.
 El microservicio principal consistirá en añadir una tarea a una localización.
 
 El proyecto completo sobre el que podría ir sería una aplicación de agenda diaria sobre la cual los eventos se unirían a ciertas localizaciones permitiendo que estos se activarán según lleguen a una localización o para ver los eventos que se tienen que realizar en una localización específica.
 
-#Herramientas
+## Herramientas
 - Lenguaje de programación: Python [https://www.python.org/].
 > Esta elección se basa en la gran demanda que tiene Python hoy en día, junto a la gran potencia y cantidad de librerías de las que dispone para facilitar el trabajo con el.
 
@@ -23,5 +23,6 @@ El proyecto completo sobre el que podría ir sería una aplicación de agenda di
 - Creación de test: Pytest [https://docs.pytest.org/en/latest/].
 > Es un framework sencillo para Python que permite de una forma sencilla la creación de pequeños tests.
 
-#Licencia
+## Licencia
+
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/antonioJ95/ProyectoIV/blob/master/LICENSE)
