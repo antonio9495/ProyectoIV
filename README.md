@@ -13,7 +13,7 @@ El proyecto completo sobre el que podría ir sería una aplicación de agenda di
 - Lenguaje de programación: [Python](https://www.python.org/).
 > Esta elección se basa en la gran demanda que tiene Python hoy en día, junto a la gran potencia y cantidad de librerías de las que dispone para facilitar el trabajo con el.
 
-- Framework: [Django](https://www.djangoproject.com/).
+- Framework: [Django-Rest](https://www.django-rest-framework.org/).
 > La elección de este framework va de la mano con la elección del lenguaje ya que es uno de los más utilizados y demandados para Python y facilita bastante la creación de una interfaz de forma simple.
 
 - Base de datos: [MongoDB](https://www.mongodb.com/).
