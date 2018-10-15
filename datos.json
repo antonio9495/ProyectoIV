@@ -1,0 +1,13 @@
+{
+    "Posicion": [
+        {
+            "id": "Pos1",
+            "latitud": "37.197222",
+            "longitud": "-3.623889"
+        }
+    ],
+    "Actividad": {
+        "id": "Act1",
+        "tipo": "Deporte"
+    }
+}

@@ -24,5 +24,4 @@ El proyecto completo sobre el que podría ir sería una aplicación de agenda di
 > Es un framework sencillo para Python que permite de una forma sencilla la creación de pequeños tests.
 
 ## Licencia
-
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/antonioJ95/ProyectoIV/blob/master/LICENSE)
