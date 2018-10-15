@@ -1,5 +1,5 @@
 # ProyectoIV
-[![Build Status](https://travis-ci.org/antonioJ95/ProyectoIV.svg?branch=master)](https://travis-ci.org/antonioJ95/ProyectoIV)
+
 Repositorio para el proyecto a desarrollar para la asignatura de Infraestructuras Virtuales.
 [Página de la documentación](https://antonioj95.github.io/ProyectoIV/)
 
@@ -27,3 +27,4 @@ El proyecto completo sobre el que podría ir sería una aplicación de agenda di
 
 ## Licencia
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/antonioJ95/ProyectoIV/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/antonioJ95/ProyectoIV.svg?branch=master)](https://travis-ci.org/antonioJ95/ProyectoIV)
