@@ -25,6 +25,20 @@ El proyecto completo sobre el que podría ir sería una aplicación de agenda di
 - Creación de test: [Pytest](https://docs.pytest.org/en/latest/).
 > Es un framework sencillo para Python que permite de una forma sencilla la creación de pequeños tests.
 
+## Integración Continua
+Hemos creado una clase simple con un constructor que realiza una lectura de un json y una función que devuelve true.
+Con esto comprobamos el correcto funcionamiento de los test viendo que devuelve true la función correspondiente y que el valor que tenemos en un campo es el correcto. La clase se usará para contener los pares de actividades y localizaciones junto con sus datos pasados por json.
+
+### Instalación
+`pip install -r requirements.txt`
+
+### Ejecutar tests
+`pytest`
+
+### Ejecutar programa
+`python3 TwitterGraph.py`
+
 ## Licencia
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/antonioJ95/ProyectoIV/blob/master/LICENSE)
+## Tests
 [![Build Status](https://travis-ci.org/antonioJ95/ProyectoIV.svg?branch=master)](https://travis-ci.org/antonioJ95/ProyectoIV)
