@@ -7,4 +7,4 @@ install:
   - pip3 install -r requeriments.txt
 
 script:
-  - pytest-3 test_prueba.py
+  - pytest test_prueba.py
