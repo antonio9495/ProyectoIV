@@ -25,9 +25,11 @@ El proyecto completo sobre el que podría ir sería una aplicación de agenda di
 - Creación de test: [Pytest](https://docs.pytest.org/en/latest/).
 > Es un framework sencillo para Python que permite de una forma sencilla la creación de pequeños tests.
 
-## Integración Continua
-Hemos creado una clase simple con un constructor que realiza una lectura de un json y una función que devuelve true.
-Con esto comprobamos el correcto funcionamiento de los test viendo que devuelve true la función correspondiente y que el valor que tenemos en un campo es el correcto. La clase se usará para contener los pares de actividades y localizaciones junto con sus datos pasados por json.
+## Descripción de la clase
+La clase contiene un diccionario el cual almacena objetos con actividades y posiciones relacionadas y sus correspondientes datos. Con la clase podremos buscar posiciones, actividades, las posiciones con las que se relaciona una actividad y viceversa y añadir un objeto nuevo.
+
+## Integración continua
+Utilizamos Travis como sistema de integración contínua encargado de lanzar los tests. Tenemos ya Travis enlazado con la cuenta de github.
 
 ### Instalación
 `pip3 install -r requirements.txt`
@@ -36,7 +38,7 @@ Con esto comprobamos el correcto funcionamiento de los test viendo que devuelve 
 `pytest`
 
 ### Ejecutar programa
-`python3 Prueba.py`
+`phyton3 Prueba.py`
 
 ## Licencia
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/antonioJ95/ProyectoIV/blob/master/LICENSE)
