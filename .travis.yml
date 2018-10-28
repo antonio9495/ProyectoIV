@@ -4,7 +4,7 @@ python:
   - "3.6.6"
 
 install:
-  - pip3 install -r requeriments.txt
+  - pip3 install -r requirements.txt
 
 script:
   - pytest test_prueba.py
