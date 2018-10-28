@@ -26,7 +26,10 @@ El proyecto completo sobre el que podría ir sería una aplicación de agenda di
 > Es un framework sencillo para Python que permite de una forma sencilla la creación de pequeños tests.
 
 ## Descripción de la clase
-La clase contiene un diccionario el cual almacena objetos con actividades y posiciones relacionadas y sus correspondientes datos. Con la clase podremos buscar posiciones, actividades, las posiciones con las que se relaciona una actividad y viceversa y añadir un objeto nuevo.
+La clase contiene un diccionario el cual almacena objetos con actividades y localizaciones relacionadas.
+Las actividades constan de un identificador, un titulo y un tipo.
+Las localizaciones constan de un identificador, latitud y longitud.
+Con la clase podremos buscar localización y actividades según su identificador, ver las localización con las que se relaciona una actividad y viceversa y añadir un objeto nuevo que relacione una localización con una actividad .
 
 ## Integración continua
 Utilizamos Travis como sistema de integración contínua encargado de lanzar los tests. Tenemos ya Travis enlazado con la cuenta de github.
