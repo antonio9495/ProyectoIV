@@ -1,13 +1,32 @@
 {
-    "Posicion": [
+  "idobjeto1":{
+    "Posicion":
         {
-            "id": "Pos1",
+            "idP": "Pos1",
             "latitud": "37.197222",
             "longitud": "-3.623889"
         }
-    ],
-    "Actividad": {
-        "id": "Act1",
-        "tipo": "Deporte"
-    }
+    ,
+    "Actividad":
+      {
+        "idA": "Act1",
+        "tipo": "Deporte",
+        "titulo": "Ir al gimnasio"
+      }
+    },
+    "idobjeto2":{
+      "Posicion":
+          {
+              "idP": "Pos2",
+              "latitud": "37.197222",
+              "longitud": "-3.623889"
+          }
+      ,
+      "Actividad":
+        {
+          "idA": "Act1",
+          "tipo": "Deporte",
+          "titulo": "Ir al gimnasio"
+        }
+      }
 }
