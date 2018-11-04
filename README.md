@@ -43,7 +43,16 @@ Utilizamos Travis como sistema de integración contínua encargado de lanzar los
 ### Ejecutar programa
 `phyton3 src/Prueba.py`
 
-### Despligue  [![](https://www.herokucdn.com/deploy/button.svg)](https://mysterious-bastion-92654.herokuapp.com/)
+### Despligue
+
+[![](https://www.herokucdn.com/deploy/button.svg)](https://mysterious-bastion-92654.herokuapp.com/)
+
+Despligue:[https://mysterious-bastion-92654.herokuapp.com/](https://mysterious-bastion-92654.herokuapp.com/)
+
+El despligue lo hemos realizado usando Heroku ya que nos aporta integración con GitHub y Travis facilitandonos así la integración continua.
+Para ello hemos tenido que registrarnos en la web de Heroku, una vez registrados con la cuenta de correo de GitHub nos permite buscar nuestro repositorio de GitHub para así vincularlo.
+En el apartado de Deploy podemos seleccionar la opción de tener despliegue automático para poder permitir que cada push al proyecto en la rama elegida en mi caso la master, haga que se implemente una nueva versión.
+Importante seleccionar la casilla para que espere a los test de travis antes de realizar esto.
 
 Para comprobar el funcionamiento podemos realizar diversas operaciones como:
 - Obtener el valor de un dato: [/getInfoDato/idobjeto1](https://mysterious-bastion-92654.herokuapp.com/getInfoDato/idobjeto1).
