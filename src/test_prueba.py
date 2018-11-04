@@ -1,6 +1,6 @@
 from Prueba import Prueba
 
-p = Prueba("../data/datos.json")
+p = Prueba("data/datos.json")
 
 def testInicio():
     assert type(p.datos["idobjeto1"]) is dict
