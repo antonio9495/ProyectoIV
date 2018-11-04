@@ -5,38 +5,39 @@ app=Flask(__name__)
 
 prueba = Prueba("data/datos.json")
 
-@app.route('/')
+@app.route('/',methods=['GET'])
 def inicio():
     returnValue = {"status":"OK"}
     return jsonify(returnValue)
 
-@app.route('/getInfoDato/<idobjeto>')
+@app.route('/getInfoDato/<idobjeto>',methods=['GET'])
 def getInfoDato(idobjeto):
     datoMuestra = prueba.getInfoDato(idobjeto)
-    return datoMuestra
+    return jsonify(datoMuestra)
 
-@app.route('/searchP/<idPos>')
+@app.route('/searchP/<idPos>',methods=['GET'])
 def searchP(idPos):
     if((prueba.buscarPosicion(idPos))[0]):
         dataP = json.dumps((prueba.buscarPosicion(idPos))[1])
-        dataP += "\n actividades asociadas a la posición"
+        dataP += "actividades asociadas a la posicion "
         for p in (prueba.ActividadesAsociadasAposicion(idPos))[1]:
             dataP += p
-            dataP += "\n"
-        return dataP
+            dataP += " "
+        return jsonify(dataP)
     else:
-        return ("No existe una posición con ese valor.")
-@app.route('/searchA/<idAct>')
+        return jsonify("No existe una posición con ese valor.")
+
+@app.route('/searchA/<idAct>',methods=['GET'])
 def searchA(idAct):
     if((prueba.buscarActividad(idAct))[0]):
         dataA = json.dumps((prueba.buscarActividad(idAct))[1])
-        dataA += "\n posiciones asociadas a la actividad"
+        dataA += "posiciones asociadas a la actividad "
         for a in (prueba.PosicionesAsociadasAactividades(idAct))[1]:
             dataA += a
-            dataA += "\n"
-        return dataA
+            dataA += " "
+        return jsonify(dataA)
     else:
-        return ("No existe una actividad con ese valor.")
+        return jsonify("No existe una actividad con ese valor.")
 
 
 
