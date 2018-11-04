@@ -41,7 +41,19 @@ Utilizamos Travis como sistema de integración contínua encargado de lanzar los
 `pytest`
 
 ### Ejecutar programa
-`phyton3 Prueba.py`
+`phyton3 src/Prueba.py`
+
+### Despligue  [![](https://www.herokucdn.com/deploy/button.svg)](https://mysterious-bastion-92654.herokuapp.com/)
+
+Para comprobar el funcionamiento podemos realizar diversas operaciones como:
+- Obtener el valor de un dato: [/getInfoDato/idobjeto1](https://mysterious-bastion-92654.herokuapp.com/getInfoDato/idobjeto1).
+> Añadiendo en la url /getInfoDato/el_id_objeto_dato nos muestra todos los elementos que componen ese dato junto a su información
+
+- Obtener una posición específica y sus actividades relacionadas: [/searchP/idPos](https://mysterious-bastion-92654.herokuapp.com/searchP/Pos1).
+> Añadiendo en la url /searchP/el_id_de_la_posición nos muestra los datos que componen esa posición junto a los ids de las actividades que se relacionan con esta posición
+
+- Obtener una actividad específica y sus posiciones relacionadas: [/searchA/idAct](https://mysterious-bastion-92654.herokuapp.com/searchA/Act1).
+> Añadiendo en la url /searchA/actividad nos muestra los datos que componen esa actividad junto a los ids de las posiciones que se relacionan con esta actividad
 
 ## Licencia
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/antonioJ95/ProyectoIV/blob/master/LICENSE)
