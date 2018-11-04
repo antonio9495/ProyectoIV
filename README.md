@@ -13,14 +13,14 @@ El proyecto completo sobre el que podría ir sería una aplicación de agenda di
 - Lenguaje de programación: [Python](https://www.python.org/).
 > Esta elección se basa en la gran demanda que tiene Python hoy en día, junto a la gran potencia y cantidad de librerías de las que dispone para facilitar el trabajo con el.
 
-- Framework: [Django-Rest](https://www.django-rest-framework.org/).
-> La elección de este framework va de la mano con la elección del lenguaje ya que es uno de los más utilizados y demandados para Python y facilita bastante la creación de una interfaz de forma simple.
+- Framework: [Flask](http://flask.pocoo.org/).
+> La elección de este framework va de la mano con la elección del lenguaje ya que se trata de un microframework perfecto para realizar pequeños proyectos que se encuentra muy bien integrado con Python.
 
 - Base de datos: [MongoDB](https://www.mongodb.com/).
 > Es una base de datos no relacional de las más conocidas y que trabaja con los datos como si fueran JSONs. Algo que he visto muy interesante de cara a la asignatura y de provecho para entender el trabajo con este tipo de datos.
 
-- Automatización del despliegue: [Azure](https://azure.microsoft.com/en-us/), [Docker](https://www.docker.com/) y [Travis](https://travis-ci.org/).
-> Docker será usado para la contenerización del microservicio obteniendo así un contenedor virtual que podremos ejecutar directamente en la Infraestructura que nos proporcione Azure y utilizando Travis para la integración continua.
+- Automatización del despliegue: [Heroku](https://www.heroku.com/), [Docker](https://www.docker.com/) y [Travis](https://travis-ci.org/).
+> Docker será usado para la contenerización del microservicio obteniendo así un contenedor virtual que podremos ejecutar directamente en la Infraestructura que nos proporcione Heroku y utilizando Travis para la integración continua.
 
 - Creación de test: [Pytest](https://docs.pytest.org/en/latest/).
 > Es un framework sencillo para Python que permite de una forma sencilla la creación de pequeños tests.

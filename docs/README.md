@@ -27,8 +27,6 @@ El proyecto completo sobre el que podría ir sería una aplicación de agenda di
 Hemos creado una clase simple con un constructor que realiza una lectura de un json y una función que devuelve true.
 Con esto comprobamos el correcto funcionamiento de los test viendo que devuelve true la función correspondiente y que el valor que tenemos en un campo es el correcto. La clase se usará para contener los pares de actividades y localizaciones junto con sus datos pasados por json.
 
-
-
 ### Instalación
 `pip3 install -r requirements.txt`
 
