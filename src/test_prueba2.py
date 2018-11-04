@@ -1,4 +1,4 @@
-import unittest, json, requests
+import json, requests
 from requests import *
 
 url ="https://mysterious-bastion-92654.herokuapp.com/"
