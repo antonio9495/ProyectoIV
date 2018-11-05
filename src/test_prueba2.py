@@ -2,6 +2,7 @@ import json, requests
 from requests import *
 
 url ="https://mysterious-bastion-92654.herokuapp.com/"
+
 def testInicio():
     response = requests.get(url)
     assert response.status_code == 200, "Devuelve codigo correcto."
