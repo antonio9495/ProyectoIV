@@ -7,7 +7,7 @@ prueba = Prueba("data/datos.json")
 
 @app.route('/',methods=['GET'])
 def inicio():
-    dato = "{'status':'Ok'}"
+    dato = "{'status':'OK'}"
     return jsonify(dato)
 
 @app.route('/getInfoDato/<idobjeto>',methods=['GET'])
