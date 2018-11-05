@@ -1,5 +1,5 @@
 # ProyectoIV
-Despligue en [https://mysterious-bastion-92654.herokuapp.com/](https://mysterious-bastion-92654.herokuapp.com/)
+Despligue:[https://mysterious-bastion-92654.herokuapp.com/](https://mysterious-bastion-92654.herokuapp.com/)
 
 Repositorio para el proyecto a desarrollar para la asignatura de Infraestructuras Virtuales.
 [Página de la documentación](https://antonioj95.github.io/ProyectoIV/)
@@ -20,7 +20,7 @@ El proyecto completo sobre el que podría ir sería una aplicación de agenda di
 - Base de datos: [MongoDB](https://www.mongodb.com/).
 > Es una base de datos no relacional de las más conocidas y que trabaja con los datos como si fueran JSONs. Algo que he visto muy interesante de cara a la asignatura y de provecho para entender el trabajo con este tipo de datos.
 
-- Automatización del despliegue: [Heroku](https://www.heroku.com/), [Docker](https://www.docker.com/) y [Travis](https://travis-ci.org/).
+- Automatización: [Heroku](https://www.heroku.com/), [Docker](https://www.docker.com/) y [Travis](https://travis-ci.org/).
 > Docker será usado para la contenerización del microservicio obteniendo así un contenedor virtual que podremos ejecutar directamente en la Infraestructura que nos proporcione Heroku y utilizando Travis para la integración continua.
 
 - Creación de test: [Pytest](https://docs.pytest.org/en/latest/).
