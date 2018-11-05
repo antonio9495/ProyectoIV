@@ -13,7 +13,7 @@ def index():
 def status():
     return jsonify(status='OK')
 
-    
+
 @app.route('/getInfoDato/<idobjeto>',methods=['GET'])
 def getInfoDato(idobjeto):
     datoMuestra = prueba.getInfoDato(idobjeto)

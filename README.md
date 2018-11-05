@@ -1,4 +1,5 @@
 # ProyectoIV
+Despligue en [https://mysterious-bastion-92654.herokuapp.com/](https://mysterious-bastion-92654.herokuapp.com/)
 
 Repositorio para el proyecto a desarrollar para la asignatura de Infraestructuras Virtuales.
 [Página de la documentación](https://antonioj95.github.io/ProyectoIV/)
@@ -43,11 +44,8 @@ Utilizamos Travis como sistema de integración contínua encargado de lanzar los
 ### Ejecutar programa
 `phyton3 src/Prueba.py`
 
-### Despligue
+### Despligue [![](https://www.herokucdn.com/deploy/button.svg)](https://mysterious-bastion-92654.herokuapp.com/)
 
-[![](https://www.herokucdn.com/deploy/button.svg)](https://mysterious-bastion-92654.herokuapp.com/)
-
-Despligue en [https://mysterious-bastion-92654.herokuapp.com/](https://mysterious-bastion-92654.herokuapp.com/)
 
 El despligue lo hemos realizado usando Heroku ya que nos aporta integración con GitHub y Travis facilitandonos así la integración continua.
 
@@ -57,7 +55,7 @@ En el apartado de Deploy podemos seleccionar la opción de tener despliegue auto
 
 Importante seleccionar la casilla para que espere a los test de travis antes de realizar esto.
 
-Aparte de añadir un archivo Procfile que indique que vamos a utilizar gunicorn 
+Aparte de añadir un archivo Procfile que indique que vamos a utilizar gunicorn
 
 Para comprobar el funcionamiento podemos realizar diversas operaciones como:
 - Obtener el valor de un dato: [/getInfoDato/idobjeto1](https://mysterious-bastion-92654.herokuapp.com/getInfoDato/idobjeto1).
