@@ -5,11 +5,15 @@ app=Flask(__name__)
 
 prueba = Prueba("data/datos.json")
 
-@app.route('/',methods=['GET'])
-def inicio():
+@app.route("/", methods=['GET'])
+def index():
     return jsonify(status='OK')
 
+@app.route("/status", methods=['GET'])
+def status():
+    return jsonify(status='OK')
 
+    
 @app.route('/getInfoDato/<idobjeto>',methods=['GET'])
 def getInfoDato(idobjeto):
     datoMuestra = prueba.getInfoDato(idobjeto)
