@@ -1,7 +1,5 @@
 # ProyectoIV
 
-[Despligue](https://mysterious-bastion-92654.herokuapp.com/)
-
 Repositorio para el proyecto a desarrollar para la asignatura de Infraestructuras Virtuales.
 [Página de la documentación](https://antonioj95.github.io/ProyectoIV/)
 
@@ -45,14 +43,15 @@ Utilizamos Travis como sistema de integración contínua encargado de lanzar los
 ### Ejecutar programa
 `phyton3 src/Prueba.py`
 
-### Despligue [![](https://www.herokucdn.com/deploy/button.svg)](https://mysterious-bastion-92654.herokuapp.com/)
+### Despliegue[![](https://www.herokucdn.com/deploy/button.svg)](https://mysterious-bastion-92654.herokuapp.com/)
 
+*  Enlace al despliegue provisional:[Despliegue](https://mysterious-bastion-92654.herokuapp.com/)
 
 El despligue lo hemos realizado usando Heroku ya que nos aporta integración con GitHub y Travis facilitandonos así la integración continua.
 
 Para ello hemos tenido que registrarnos en la web de Heroku, una vez registrados con la cuenta de correo de GitHub nos permite buscar nuestro repositorio de GitHub para así vincularlo.
 
-En el apartado de Deploy podemos seleccionar la opción de tener despliegue automático para poder permitir que cada push al proyecto en la rama elegida, en mi caso la master, haga que se implemente una nueva versión.
+En el apartado de Deploy podemos seleccionar la opción de desplegar automáticamente para poder permitir que cada push al proyecto en la rama elegida, en mi caso la master, haga que se implemente una nueva versión.
 
 Importante seleccionar la casilla para que espere a los test de travis antes de realizar esto.
 
