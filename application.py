@@ -8,8 +8,8 @@ prueba = Prueba("data/datos.json")
 @app.route('/',methods=['GET'])
 def inicio():
     dato={"status": "OK"}
-    asd = json.dumps(dato)
-    return asd
+    return jsonify(dato)
+
 @app.route('/getInfoDato/<idobjeto>',methods=['GET'])
 def getInfoDato(idobjeto):
     datoMuestra = prueba.getInfoDato(idobjeto)
