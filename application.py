@@ -6,10 +6,9 @@ app=Flask(__name__)
 prueba = Prueba("data/datos.json")
 
 @app.route('/',methods=['GET'])
-def js():
-    dato={"status": "OK"}
-    asd = json.dumps(dato)
-    return asd
+def inicio():
+    dato = "{'status':'Ok'}"
+    return jsonify(dato)
 
 @app.route('/getInfoDato/<idobjeto>',methods=['GET'])
 def getInfoDato(idobjeto):
