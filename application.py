@@ -27,7 +27,7 @@ def searchP(idPos):
         for p in (prueba.ActividadesAsociadasAposicion(idPos))[1]:
             dataP += p
             dataP += " "
-        return dataP
+        return jsonify(dataP)
     else:
         return jsonify("No existe una posición con ese valor.")
 
@@ -39,7 +39,7 @@ def searchA(idAct):
         for a in (prueba.PosicionesAsociadasAactividades(idAct))[1]:
             dataA += a
             dataA += " "
-        return dataA
+        return jsonify(dataA)
     else:
         return jsonify("No existe una actividad con ese valor.")
 
