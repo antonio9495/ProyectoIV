@@ -17,7 +17,7 @@ def status():
 @app.route('/getInfoDato/<idobjeto>',methods=['GET'])
 def getInfoDato(idobjeto):
     datoMuestra = prueba.getInfoDato(idobjeto)
-    return jsonify(datoMuestras)
+    return jsonify(datoMuestra)
 
 @app.route('/searchP/<idPos>',methods=['GET'])
 def searchP(idPos):
@@ -29,7 +29,7 @@ def searchP(idPos):
             dataP += " "
         return dataP
     else:
-        return "No existe una posición con ese valor."
+        return jsonify("No existe una posición con ese valor.")
 
 @app.route('/searchA/<idAct>',methods=['GET'])
 def searchA(idAct):
@@ -41,7 +41,7 @@ def searchA(idAct):
             dataA += " "
         return dataA
     else:
-        return "No existe una actividad con ese valor."
+        return jsonify("No existe una actividad con ese valor.")
 
 
 
