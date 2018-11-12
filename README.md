@@ -55,8 +55,7 @@ En el apartado de Deploy podemos seleccionar la opción de desplegar automática
 
 Importante seleccionar la casilla para que espere a los test de travis antes de realizar esto.
 
-Aparte de añadir un **archivo Procfile** con el que especificaremos los comandos que serán ejecutados por los dynos de Heroku.
-En el añadiremos una linea indicando que para el proceso web se aplique el comando gunicorn application:app
+Aparte de añadir un archivo Procfile que indique que vamos a utilizar gunicorn
 
 Para comprobar el funcionamiento podemos realizar diversas operaciones como:
 - Obtener el valor de un dato: [/getInfoDato/idobjeto1](https://mysterious-bastion-92654.herokuapp.com/getInfoDato/idobjeto1).

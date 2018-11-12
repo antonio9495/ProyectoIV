@@ -29,7 +29,7 @@ def searchP(idPos):
             dataP += " "
         return jsonify(dataP)
     else:
-        return jsonify("No existe una posicion con ese valor.")
+        return jsonify("No existe una posición con ese valor.")
 
 @app.route('/searchA/<idAct>',methods=['GET'])
 def searchA(idAct):
