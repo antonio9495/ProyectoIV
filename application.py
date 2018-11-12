@@ -17,7 +17,7 @@ def status():
 @app.route('/getInfoDato/<idobjeto>',methods=['GET'])
 def getInfoDato(idobjeto):
     datoMuestra = prueba.getInfoDato(idobjeto)
-    return datoMuestras
+    return jsonify(datoMuestras)
 
 @app.route('/searchP/<idPos>',methods=['GET'])
 def searchP(idPos):
