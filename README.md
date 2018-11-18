@@ -68,6 +68,19 @@ Para comprobar el funcionamiento podemos realizar diversas operaciones como:
 - Obtener una actividad específica y sus posiciones relacionadas: [/searchA/Act1](https://mysterious-bastion-92654.herokuapp.com/searchA/Act1).
 > Añadiendo en la url /searchA/actividad nos muestra los datos que componen esa actividad junto a los ids de las posiciones que se relacionan con esta actividad
 
+### Despliegue en contenedor:
+
+Para el despliegue en contenedor, hacemos un pull a la imagen que tenemos creada en nuestro docker hub, la cual esta relacionada con github para que haga un autobuild
+cada vez que se hace un push al repositorio.
+
+Luego hay que hacerle tag a la imagen con el formato siguiente:
+docker tag ajimenez95/iv-proyect registry.heroku.com/docker-iv-project/web
+Siendo ajimenez95/iv-proyect el nombre de usuario de docker hub y iv-project el nombre del repositorio linkado a github.
+
+Luego aseguramos que el remoto donde subiremos la imagen es al que queremos: heroku git:remote -a docker-iv-project y por último realizamos el push de la imagen
+
+docker push registry.heroku.com/docker-iv-project/web
+
 ## Licencia
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/antonioJ95/ProyectoIV/blob/master/LICENSE)
 ## Tests
