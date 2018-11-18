@@ -43,7 +43,7 @@ Utilizamos Travis como sistema de integración contínua encargado de lanzar los
 ### Ejecutar programa
 `phyton3 src/Prueba.py`
 
-### Despliegue[![](https://www.herokucdn.com/deploy/button.svg)](https://mysterious-bastion-92654.herokuapp.com/)
+### Despliegue [![](https://www.herokucdn.com/deploy/button.svg)](https://mysterious-bastion-92654.herokuapp.com/)
 
 *  Enlace al despliegue provisional:[Despliegue](https://mysterious-bastion-92654.herokuapp.com/)
 
@@ -68,31 +68,55 @@ Para comprobar el funcionamiento podemos realizar diversas operaciones como:
 - Obtener una actividad específica y sus posiciones relacionadas: [/searchA/Act1](https://mysterious-bastion-92654.herokuapp.com/searchA/Act1).
 > Añadiendo en la url /searchA/actividad nos muestra los datos que componen esa actividad junto a los ids de las posiciones que se relacionan con esta actividad
 
-### Despliegue en contenedor:
+### Despliegue en contenedor [![](https://www.herokucdn.com/deploy/button.svg)](https://docker-iv-project.herokuapp.com/status)
 
-Para el despliegue en contenedor, hacemos un pull a la imagen que tenemos creada en nuestro docker hub, la cual esta relacionada con github para que haga un autobuild
-cada vez que se hace un push al repositorio.
+Para el despliegue en contenedor, hacemos un pull a la imagen que tenemos creada en nuestro docker hub para heroku:
+~~~
+docker pull ajimenez95/iv-proyect
+~~~
+La cual esta relacionada con github para que haga un autobuild cada vez que se hace un push al repositorio usando el Dockerfile que se encuentra en github.
 
-Luego hay que hacerle tag a la imagen con el formato siguiente:
+Luego hay que taguear la imagen con el formato siguiente:
+~~~
 docker tag ajimenez95/iv-proyect registry.heroku.com/docker-iv-project/web
+~~~
+
 Siendo ajimenez95/iv-proyect el nombre de la imagen descargarda.
 
-Luego aseguramos que el remoto donde subiremos la imagen es al que queremos: heroku git:remote -a docker-iv-project y por último realizamos el push de la imagen
+Luego aseguramos que el remoto donde subiremos la imagen es al que queremos:
+~~~
+heroku git:remote -a docker-iv-project
+~~~
 
+Seguidamente hacemos push de la imagen a nuestra app de heroku:
+~~~
 docker push registry.heroku.com/docker-iv-project/web
+~~~
 
-Por último hacer release heroku container:release web.
+Por último hacer release:
+~~~
+heroku container:release web.
+~~~
 
+#### Prueba en local.
 Para permitir probar en local con una imagen de docker, hemos subido al repositorio de docker hub una imagen que nos permite eso.
 Para ello construimos la imagen en local:
+~~~
 docker build -t "pruebalocal" .
-Tageamos con el nombre de nuestro repositorio de docker hub y su tag.
+~~~
+Tagueamos con el nombre de nuestro repositorio de docker hub y su tag.
+~~~
 docker tag pruebalocal ajimenez95/proyectoiv:latest
+~~~
+Y hacemos push al repositorio correspondiente
+~~~
+docker push ajimenez95/proyectoiv.
+~~~
+Para ejecutar el contenedor en local:
+~~~
+docker run -p 5000:5000 -it --rm ajimenez95/proyectoiv
+~~~
 
-Y hacemos push al repositorio correspondiente docker push ajimenez95/proyectoiv.
-
-Para utilizar esta imagen solo debemos realizar docker pull ajimenez95/proyectoiv
-y ya descargada podemos ejecutarla con docker run -p 5000:5000 -it --rm ajimenez95/proyectoiv 
 ## Licencia
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/antonioJ95/ProyectoIV/blob/master/LICENSE)
 ## Tests
