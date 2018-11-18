@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.6
 
 # We copy just the requirements.txt first to leverage Docker cache
 COPY ./requirements.txt /application/requirements.txt
@@ -11,7 +11,5 @@ RUN pip install -r requirements.txt
 
 ENTRYPOINT [ "python" ]
 
-EXPOSE 80
-
 # Run app.py when the container launches
-CMD ["python", "app.py"]
+CMD ["python3", "app.py"]
