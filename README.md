@@ -75,12 +75,24 @@ cada vez que se hace un push al repositorio.
 
 Luego hay que hacerle tag a la imagen con el formato siguiente:
 docker tag ajimenez95/iv-proyect registry.heroku.com/docker-iv-project/web
-Siendo ajimenez95/iv-proyect el nombre de usuario de docker hub y iv-project el nombre del repositorio linkado a github.
+Siendo ajimenez95/iv-proyect el nombre de la imagen descargarda.
 
 Luego aseguramos que el remoto donde subiremos la imagen es al que queremos: heroku git:remote -a docker-iv-project y por último realizamos el push de la imagen
 
 docker push registry.heroku.com/docker-iv-project/web
 
+Por último hacer release heroku container:release web.
+
+Para permitir probar en local con una imagen de docker, hemos subido al repositorio de docker hub una imagen que nos permite eso.
+Para ello construimos la imagen en local:
+docker build -t "pruebalocal" .
+Tageamos con el nombre de nuestro repositorio de docker hub y su tag.
+docker tag pruebalocal ajimenez95/proyectoiv:latest
+
+Y hacemos push al repositorio correspondiente docker push ajimenez95/proyectoiv.
+
+Para utilizar esta imagen solo debemos realizar docker pull ajimenez95/proyectoiv
+y ya descargada podemos ejecutarla con docker run -p 5000:5000 -it --rm ajimenez95/proyectoiv 
 ## Licencia
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/antonioJ95/ProyectoIV/blob/master/LICENSE)
 ## Tests
