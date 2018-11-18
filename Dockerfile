@@ -7,9 +7,7 @@ WORKDIR /application
 
 COPY . /application
 
-RUN pip install -r requirements.txt
-
-ENTRYPOINT [ "python" ]
+RUN pip3 install -r requirements.txt
 
 # Run app.py when the container launches
-CMD ["python3", "app.py"]
+CMD ["gunicorn", "application:app"]
