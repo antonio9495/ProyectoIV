@@ -70,6 +70,8 @@ Para comprobar el funcionamiento podemos realizar diversas operaciones como:
 
 ### Despliegue en contenedor [![](https://www.herokucdn.com/deploy/button.svg)](https://docker-iv-project.herokuapp.com/status)
 
+Enlace a [DockerHub](https://hub.docker.com/r/ajimenez95/iv-proyect/)
+
 Para el despliegue en contenedor, hacemos un pull a la imagen que tenemos creada en nuestro docker hub para heroku:
 ~~~
 docker pull ajimenez95/iv-proyect
