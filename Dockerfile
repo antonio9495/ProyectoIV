@@ -11,4 +11,7 @@ RUN pip install -r requirements.txt
 
 ENTRYPOINT [ "python" ]
 
-CMD ["python", "application.py"]
+EXPOSE 80
+
+# Run app.py when the container launches
+CMD ["python", "app.py"]
