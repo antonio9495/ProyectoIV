@@ -11,4 +11,4 @@ RUN pip install -r requirements.txt
 
 ENTRYPOINT [ "python" ]
 
-CMD ["application.py"]
+CMD ["gunicorn", "application:app"]
