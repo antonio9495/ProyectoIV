@@ -69,6 +69,8 @@ Enlace a [DockerHub](https://hub.docker.com/r/ajimenez95/iv-proyect/)
 Este repositorio está creado usando la opción de Create Automated Build, linkando nuestra cuenta de github y seleccionando nuestro repositorio de github.
 Con esto conseguimos que se construya una imagen de docker cada vez que se hace un push al repositorio usando el Dockerfile que se encuentra en github.
 
+Para que nuestra nueva app de heroku construya la imagen de docker añadimos el heroku.yml y le indicamos con heroku stack:set container que utilizaremoss docker.
+
 
 Para el despliegue en contenedor, hacemos un pull a la imagen que tenemos creada en nuestro docker hub para heroku:
 ~~~

@@ -43,6 +43,20 @@ def searchA(idAct):
     else:
         return jsonify("No existe una actividad con ese valor.")
 
+@app.route('/create',methods=['POST'])
+def createObject():
+    data = request.get_json()
+    act = data["act"]
+    post = data["post"]
+    id = prueba.crearObjeto(act,post)
+    print(type(post))
+    if id == -1:
+        return jsonify("No se ha podido crear el objeto ")
+    else:
+        return jsonify("id del objeto creado " + id)
+
+
+
 
 
 

@@ -3,6 +3,7 @@ FROM python:3.6
 WORKDIR /application
 
 COPY ./src /application/src
+COPY ./data /application/data
 COPY ./application.py /application/application.py
 COPY ./requirements.txt /application/requirements.txt
 
