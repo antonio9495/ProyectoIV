@@ -72,48 +72,13 @@ Con esto conseguimos que se construya una imagen de docker cada vez que se hace 
 Para que nuestra nueva app de heroku construya la imagen de docker añadimos el heroku.yml y le indicamos con heroku stack:set container que utilizaremoss docker.
 
 
-Para el despliegue en contenedor, hacemos un pull a la imagen que tenemos creada en nuestro docker hub para heroku:
+#### Prueba en local.
+Para la prueba en local basta con hacer un pull de la imagen que tenemos en DockerHub:
 ~~~
 docker pull ajimenez95/iv-proyect
 ~~~
 
-Luego hay que taguear la imagen con el formato siguiente:
-~~~
-docker tag ajimenez95/iv-proyect registry.heroku.com/docker-iv-project/web
-~~~
-
-Siendo ajimenez95/iv-proyect el nombre de la imagen descargarda.
-
-Luego aseguramos que el remoto donde subiremos la imagen es al que queremos:
-~~~
-heroku git:remote -a docker-iv-project
-~~~
-
-Seguidamente hacemos push de la imagen a nuestra app de heroku:
-~~~
-docker push registry.heroku.com/docker-iv-project/web
-~~~
-
-Por último hacer release:
-~~~
-heroku container:release web.
-~~~
-
-#### Prueba en local.
-Para permitir probar en local con una imagen de docker, hemos subido al repositorio de docker hub una imagen que nos permite eso.
-Para ello construimos la imagen en local:
-~~~
-docker build -t "pruebalocal" .
-~~~
-Tagueamos con el nombre de nuestro repositorio de docker hub y su tag.
-~~~
-docker tag pruebalocal ajimenez95/proyectoiv:latest
-~~~
-Y hacemos push al repositorio correspondiente
-~~~
-docker push ajimenez95/proyectoiv.
-~~~
-Para ejecutar el contenedor en local:
+Y ejecutar el contenedor en local:
 ~~~
 docker run -p 5000:5000 -it --rm ajimenez95/proyectoiv
 ~~~
