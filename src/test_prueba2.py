@@ -32,4 +32,4 @@ def testCreateObject():
     response = requests.request("POST",url+"create", json=payload)
 
     assert response.status_code == 200, "Devuelve codigo correcto."
-    assert response.json() != "No se ha podido crear el objeto ", "Devuelve estado correcto."
+    assert response.json() != "No se ha podido crear el objeto ", " Devuelve estado correcto."
