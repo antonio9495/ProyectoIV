@@ -12,4 +12,4 @@ COPY ./requirements.txt /application/requirements.txt
 RUN pip3 install -r requirements.txt
 
 # Run application.py when the container launches
-CMD ["gunicorn", "-b", "0.0.0.0:80", "application:app"]
+CMD ["gunicorn", "application:app"]
