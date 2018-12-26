@@ -65,7 +65,7 @@ Para comprobar el funcionamiento podemos realizar diversas operaciones como:
 
 ### Despliegue en contenedor [![](https://www.herokucdn.com/deploy/button.svg)](https://docker-iv-project.herokuapp.com/status)
 
-Enlace a [DockerHub](https://hub.docker.com/r/ajimenez95/projectiv/)
+Enlace a [DockerHub](https://hub.docker.com/r/ajimenez95/projectiv)
 
 Este repositorio está creado usando la opción de Create Automated Build, linkando nuestra cuenta de github y seleccionando nuestro repositorio del proyecto.
 Con esto conseguimos que se construya una imagen de docker cada vez que se hace un push al repositorio usando el Dockerfile que se encuentra en github.
