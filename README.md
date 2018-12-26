@@ -11,19 +11,14 @@ El proyecto completo sobre el que podría ir sería una aplicación de agenda di
 
 ## Herramientas
 - Lenguaje de programación: [Python](https://www.python.org/).
-> Esta elección se basa en la gran demanda que tiene Python hoy en día, junto a la gran potencia y cantidad de librerías de las que dispone para facilitar el trabajo con el.
 
 - Framework: [Flask](http://flask.pocoo.org/).
-> La elección de este framework va de la mano con la elección del lenguaje ya que se trata de un microframework perfecto para realizar pequeños proyectos que se encuentra muy bien integrado con Python.
 
 - Base de datos: [MongoDB](https://www.mongodb.com/).
-> Es una base de datos no relacional de las más conocidas y que trabaja con los datos como si fueran JSONs. Algo que he visto muy interesante de cara a la asignatura y de provecho para entender el trabajo con este tipo de datos.
 
 - Automatización: [Heroku](https://www.heroku.com/), [Docker](https://www.docker.com/) y [Travis](https://travis-ci.org/).
-> Docker será usado para la contenerización del microservicio obteniendo así un contenedor virtual que podremos ejecutar directamente en la Infraestructura que nos proporcione Heroku y utilizando Travis para la integración continua.
 
 - Creación de test: [Pytest](https://docs.pytest.org/en/latest/).
-> Es un framework sencillo para Python que permite de una forma sencilla la creación de pequeños tests.
 
 ## Descripción de la clase
 La clase contiene un diccionario el cual almacena objetos con actividades y localizaciones relacionadas.
@@ -71,12 +66,14 @@ Para comprobar el funcionamiento podemos realizar diversas operaciones como:
 ### Despliegue en contenedor [![](https://www.herokucdn.com/deploy/button.svg)](https://docker-iv-project.herokuapp.com/status)
 
 Enlace a [DockerHub](https://hub.docker.com/r/ajimenez95/iv-proyect/)
+Este repositorio está creado usando la opción de Create Automated Build, linkando nuestra cuenta de github y seleccionando nuestro repositorio de github.
+Con esto conseguimos que se construya una imagen de docker cada vez que se hace un push al repositorio usando el Dockerfile que se encuentra en github.
+
 
 Para el despliegue en contenedor, hacemos un pull a la imagen que tenemos creada en nuestro docker hub para heroku:
 ~~~
 docker pull ajimenez95/iv-proyect
 ~~~
-La cual esta relacionada con github para que haga un autobuild cada vez que se hace un push al repositorio usando el Dockerfile que se encuentra en github.
 
 Luego hay que taguear la imagen con el formato siguiente:
 ~~~
