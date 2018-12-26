@@ -66,8 +66,11 @@ Para comprobar el funcionamiento podemos realizar diversas operaciones como:
 ### Despliegue en contenedor [![](https://www.herokucdn.com/deploy/button.svg)](https://docker-iv-project.herokuapp.com/status)
 
 Enlace a [DockerHub](https://hub.docker.com/r/ajimenez95/iv-proyect/)
-Este repositorio está creado usando la opción de Create Automated Build, linkando nuestra cuenta de github y seleccionando nuestro repositorio de github.
+
+Este repositorio está creado usando la opción de Create Automated Build, linkando nuestra cuenta de github y seleccionando nuestro repositorio del proyecto.
 Con esto conseguimos que se construya una imagen de docker cada vez que se hace un push al repositorio usando el Dockerfile que se encuentra en github.
+
+En el Dockerfile indicamos los archivos que necesitamos copiar, que instale las dependencias que tenemos en requirements.txt y la orden a ejecutar.
 
 Para que nuestra nueva app de heroku construya la imagen de docker añadimos el heroku.yml y le indicamos con heroku stack:set container que utilizaremoss docker.
 
