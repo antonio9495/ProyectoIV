@@ -63,7 +63,7 @@ Para comprobar el funcionamiento podemos realizar diversas operaciones como:
 - Obtener una actividad específica y sus posiciones relacionadas: [/searchA/Act1](https://mysterious-bastion-92654.herokuapp.com/searchA/Act1).
 > Añadiendo en la url /searchA/actividad nos muestra los datos que componen esa actividad junto a los ids de las posiciones que se relacionan con esta actividad
 
-### Despliegue en contenedor [![](https://www.herokucdn.com/deploy/button.svg)](https://docker-iv-project.herokuapp.com/status)
+### Despliegue en contenedor [![](https://www.herokucdn.com/deploy/button.svg)](https://docker-iv-project.herokuapp.com)
 
 Enlace a [DockerHub](https://hub.docker.com/r/ajimenez95/projectiv)
 
@@ -74,17 +74,6 @@ En el Dockerfile indicamos los archivos que necesitamos copiar, que instale las 
 
 Para que nuestra nueva app de heroku construya la imagen de docker añadimos el heroku.yml y le indicamos con heroku stack:set container que utilizaremoss docker.
 
-
-#### Prueba en local.
-Para la prueba en local basta con hacer un pull de la imagen que tenemos en DockerHub:
-~~~
-docker pull ajimenez95/projectiv
-~~~
-
-Y ejecutar el contenedor en local:
-~~~
-docker run -p 5000:5000 -it --rm ajimenez95/proyectoiv
-~~~
 
 ## Licencia
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/antonioJ95/ProyectoIV/blob/master/LICENSE)
