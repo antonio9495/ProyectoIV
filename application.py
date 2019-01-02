@@ -56,8 +56,25 @@ def createObject():
         return jsonify("id del objeto creado " + id)
 
 
+@app.route('/updateAct',methods=['PUT'])
+def updateAct():
+    data = request.get_json()
+    idobjeto = data["idobjeto"]
+    nactividad = data["nuevaActividad"]
+    if prueba.cambiarActividad(idobjeto,nactividad):
+        return jsonify("Objeto actualizado correctamente")
+    else:
+        return jsonify("Problema al actualizar la actividad del objeto")
 
+@app.route('/deleteObject',methods=['DELETE'])
+def deleteobj():
+    data = request.get_json()
+    idobjeto = data["idobjeto"]
 
+    if prueba.deleteObjeto(idobjeto):
+        return jsonify("Objeto eleminado correctamente")
+    else:
+        return jsonify("Problema al eliminar el objeto")
 
 
 if __name__ == "__main__":
