@@ -28,3 +28,11 @@ def testCrearObjeto():
     assert (id==("idobjeto"+ str(len(p.datos)))), "se ha creado bien"
     id = p.crearObjeto({"idP": "Act1", "tipo": "Deporte", "titulo": "Ir al gimnasio" }, {"idP": "Pos3","latitud": "37.197222","longitud": "-3.623889"})
     assert (id == -1), "No se ha podido crear el objeto"
+
+def testActualizarObjeto():
+    id = p.cambiarActividad("idobjeto1",{"idA": "Act1", "tipo": "Deporte", "titulo": "Ir al gimnasio" })
+    assert (id == True), "se ha modificado bien"
+
+def testDeleteObjeto():
+    id = p.deleteObjeto("idobjeto1")
+    assert (id == True), "se ha eliminado bien"

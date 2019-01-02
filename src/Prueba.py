@@ -74,3 +74,20 @@ class Prueba:
                 self.datos[id] = {"Posicion": {"idP":coordenadas["idP"],"latitud":coordenadas["latitud"],"longitud":coordenadas["longitud"]},
                                     "Actividad": {"idA":actividad["idA"],"tipo":actividad["tipo"],"titulo":actividad["titulo"]}}
         return id
+
+    def cambiarActividad(self, idobjeto, nuevaActividad):
+        dictA ={"idA": "None", "tipo": "None", "titulo": "None" }
+        if type(nuevaActividad) == dict:
+            if dictA.keys() == nuevaActividad.keys():
+                if idobjeto in self.datos:
+                    self.datos[idobjeto]["Actividad"] = nuevaActividad
+                    return True
+        else:
+            return False
+
+    def deleteObjeto(self, idobjeto):
+        result = self.datos.pop(idobjeto, None)
+        if result is None:
+            return False
+        else:
+            return True
