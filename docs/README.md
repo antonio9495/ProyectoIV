@@ -1,40 +1,54 @@
-# Repositorio para la documentación del proyecto.
-Utilización de plantilla de jekyll para la github page.
+# ProyectoIV
 
-## Descripción
-Creación de microservicios que permita gestionar una relación de una serie de actividades y eventos a unas coordenadas específicas.
-El microservicio principal consistirá en añadir una tarea a una localización.
+### Despliegue [![](https://www.herokucdn.com/deploy/button.svg)](https://mysterious-bastion-92654.herokuapp.com/)
 
-El proyecto completo sobre el que podría ir sería una aplicación de agenda diaria sobre la cual los eventos se unirían a ciertas localizaciones permitiendo que estos se activarán según lleguen a una localización o para ver los eventos que se tienen que realizar en una localización específica.
+*  Enlace al despliegue provisional:[Despliegue](https://mysterious-bastion-92654.herokuapp.com/)
 
-## Herramientas
-- Lenguaje de programación: [Python](https://www.python.org/).
-> Esta elección se basa en la gran demanda que tiene Python hoy en día, junto a la gran potencia y cantidad de librerías de las que dispone para facilitar el trabajo con el.
+El despligue lo hemos realizado usando Heroku ya que nos aporta integración con GitHub y Travis facilitandonos así la integración continua.
 
-- Framework: [Django](https://www.djangoproject.com/).
-> La elección de este framework va de la mano con la elección del lenguaje ya que es uno de los más utilizados y demandados para Python y facilita bastante la creación de una interfaz de forma simple.
+Para ello hemos tenido que registrarnos en la web de Heroku, una vez registrados con la cuenta de correo de GitHub nos permite buscar nuestro repositorio de GitHub para así vincularlo.
 
-- Base de datos: [MongoDB](https://www.mongodb.com/).
-> Es una base de datos no relacional de las más conocidas y que trabaja con los datos como si fueran JSONs. Algo que he visto muy interesante de cara a la asignatura y de provecho para entender el trabajo con este tipo de datos.
+En el apartado de Deploy podemos seleccionar la opción de desplegar automáticamente para poder permitir que cada push al proyecto en la rama elegida, en mi caso la master, haga que se implemente una nueva versión.
 
-- Automatización del despliegue: [Azure](https://azure.microsoft.com/en-us/), [Docker](https://www.docker.com/) y [Travis](https://travis-ci.org/).
-> Docker será usado para la contenerización del microservicio obteniendo así un contenedor virtual que podremos ejecutar directamente en la Infraestructura que nos proporcione Azure y utilizando Travis para la integración continua.
+Importante seleccionar la casilla para que espere a los test de travis antes de realizar esto.
 
-- Creación de test: [Pytest](https://docs.pytest.org/en/latest/).
-> Es un framework sencillo para Python que permite de una forma sencilla la creación de pequeños tests.
+Aparte de añadir un **archivo Procfile** con el que especificaremos los comandos que serán ejecutados por los dynos de Heroku.
+En el añadiremos una linea indicando que para el proceso web se aplique el comando gunicorn application:app
 
-## Integración Continua
-Hemos creado una clase simple con un constructor que realiza una lectura de un json y una función que devuelve true.
-Con esto comprobamos el correcto funcionamiento de los test viendo que devuelve true la función correspondiente y que el valor que tenemos en un campo es el correcto. La clase se usará para contener los pares de actividades y localizaciones junto con sus datos pasados por json.
+Para comprobar el funcionamiento podemos realizar diversas operaciones como:
+- Obtener el valor de un dato: [/getInfoDato/idobjeto1](https://mysterious-bastion-92654.herokuapp.com/getInfoDato/idobjeto1).
+> Añadiendo en la url /getInfoDato/el_id_objeto_dato nos muestra todos los elementos que componen ese dato junto a su información
 
-### Instalación
-`pip3 install -r requirements.txt`
+- Obtener una posición específica y sus actividades relacionadas: [/searchP/Pos1](https://mysterious-bastion-92654.herokuapp.com/searchP/Pos1).
+> Añadiendo en la url /searchP/el_id_de_la_posición nos muestra los datos que componen esa posición junto a los ids de las actividades que se relacionan con esta posición
 
-### Ejecutar tests
-`pytest`
+- Obtener una actividad específica y sus posiciones relacionadas: [/searchA/Act1](https://mysterious-bastion-92654.herokuapp.com/searchA/Act1).
+> Añadiendo en la url /searchA/actividad nos muestra los datos que componen esa actividad junto a los ids de las posiciones que se relacionan con esta actividad
 
-### Ejecutar programa
-`python3 Prueba.py`
+
+
+### Despliegue en contenedor [![](https://www.herokucdn.com/deploy/button.svg)](https://docker-iv-project.herokuapp.com)
+
+Enlace a [DockerHub](https://hub.docker.com/r/ajimenez95/projectiv)
+
+#### DockerHub y Dockerfile:
+El repositorio enlazado arriba está creado una vez nos hemos registrados en DockerHub y usando la opción de Create Automated Build.
+Esta opción nos permite enlazar nuestra cuenta de Github, seleccionar nuestro repositorio del proyecto, para poder acceder al Dockerfile contenido en el, y crear así una imagen con cada push que realicemos a nuestro repositorio de Github.
+
+Con el Dockerfile estamos indicando tanto la imagen base que utilizaremos como las instrucciones para construir el contenedor.
+En nuestro Dockerfile indicamos la imagen que usamos como base (python:3.6), indicamos los archivos que necesitamos copiar, que instale las dependencias que tenemos en requirements.txt y el comando de inicio a usar cuando inicie el contenedor.
+La imagen base utilizada es la versión de python que tengo en mi ordenador, la cual incluye los paquetes necesarios para el funcionamiento de mi app y con la que tengo comprobado que funciona.
+
+
+#### Heroku.yml:
+[Documentación seguida](https://devcenter.heroku.com/articles/build-docker-images-heroku-yml)
+
+Hemos creado otra app en heroku para desplegar la usando contenedores.
+Para que nuestra nueva app de heroku construya la imagen de docker añadimos el heroku.yml donde le indicamos en la parte de build que usaremos el Dockerfile que se encuentra en este directorio.
+Y le indicamos con heroku stack:set container que utilizaremos contenedores para esta app.
+
+En el heroku.yml no hemos indicado ninguna orden para la ejecución ya que como indica la documentación se puede utilizar la que ya se encuentra en el Dockerfile.
+
 
 ## Licencia
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/antonioJ95/ProyectoIV/blob/master/LICENSE)
