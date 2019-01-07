@@ -1,7 +1,6 @@
 # ProyectoIV
 
 Repositorio para el proyecto a desarrollar para la asignatura de Infraestructuras Virtuales.
-[Página de la documentación](https://antonioj95.github.io/ProyectoIV/)
 
 ## Descripción
 Creación de microservicios que permita gestionar una relación de una serie de actividades y eventos a unas coordenadas específicas.
@@ -38,7 +37,7 @@ Utilizamos Travis como sistema de integración contínua encargado de lanzar los
 
 Enlace a [DockerHub](https://hub.docker.com/r/ajimenez95/projectiv)
 
-
+[Página de la documentación](https://antonioj95.github.io/ProyectoIV/)
 ## Licencia
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/antonioJ95/ProyectoIV/blob/master/LICENSE)
 ## Tests

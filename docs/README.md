@@ -4,7 +4,7 @@
 
 *  Enlace al despliegue provisional:[Despliegue](https://mysterious-bastion-92654.herokuapp.com/)
 
-El despligue lo hemos realizado usando Heroku ya que nos aporta integración con GitHub y Travis facilitandonos así la integración continua.
+El despliegue lo hemos realizado usando Heroku ya que nos aporta integración con GitHub y Travis facilitandonos así la integración continua.
 
 Para ello hemos tenido que registrarnos en la web de Heroku, una vez registrados con la cuenta de correo de GitHub nos permite buscar nuestro repositorio de GitHub para así vincularlo.
 
@@ -31,23 +31,56 @@ Para comprobar el funcionamiento podemos realizar diversas operaciones como:
 
 Enlace a [DockerHub](https://hub.docker.com/r/ajimenez95/projectiv)
 
-#### DockerHub y Dockerfile:
-El repositorio enlazado arriba está creado una vez nos hemos registrados en DockerHub y usando la opción de Create Automated Build.
-Esta opción nos permite enlazar nuestra cuenta de Github, seleccionar nuestro repositorio del proyecto, para poder acceder al Dockerfile contenido en el, y crear así una imagen con cada push que realicemos a nuestro repositorio de Github.
+#### Dockerfile:
+Con el Dockerfile estamos indicando tanto la imagen base que utilizaremos para nuestro contenedor como las instrucciones necesarias para cubrir las necesidades de nuestra app.
 
-Con el Dockerfile estamos indicando tanto la imagen base que utilizaremos como las instrucciones para construir el contenedor.
 En nuestro Dockerfile indicamos la imagen que usamos como base (python:3.6), indicamos los archivos que necesitamos copiar, que instale las dependencias que tenemos en requirements.txt y el comando de inicio a usar cuando inicie el contenedor.
+
 La imagen base utilizada es la versión de python que tengo en mi ordenador, la cual incluye los paquetes necesarios para el funcionamiento de mi app y con la que tengo comprobado que funciona.
 
 
-#### Heroku.yml:
+#### DockerHub
+El repositorio de DockerHub está creado una vez nos hemos registrados en DockerHub y usando la opción de Create Automated Build.
+Esta opción nos permite enlazar nuestra cuenta de Github y seleccionar nuestro repositorio del proyecto, para poder acceder al Dockerfile contenido en el, y crear así una imagen con cada push que realicemos a nuestro repositorio de Github.
+Esta imagen se almacenará en este repositorio de DockerHub.
+
+
+La configuración en el apartado builds de nuestro repositorio de DockerHub debe ser la siguiente:
+![alt text](https://github.com/antonioJ95/ProyectoIV/tree/master/docs/configuracionDockerHub.png)
+
+Con esta cofiguración ya tendríamos asegurado que este repositorio de DockerHub esta enlazado con el nuestro de GitHub en el cual se encuentra nuestro proyecto y le tenemos indicada también donde está el dockerfile que debe de utilizar.
+
+
+#### Heroku.yml y despliegue con contenedor:
 [Documentación seguida](https://devcenter.heroku.com/articles/build-docker-images-heroku-yml)
 
 Hemos creado otra app en heroku para desplegar la usando contenedores.
-Para que nuestra nueva app de heroku construya la imagen de docker añadimos el heroku.yml donde le indicamos en la parte de build que usaremos el Dockerfile que se encuentra en este directorio.
-Y le indicamos con heroku stack:set container que utilizaremos contenedores para esta app.
+![alt text](https://github.com/antonioJ95/ProyectoIV/tree/master/docs/aps.png)
 
-En el heroku.yml no hemos indicado ninguna orden para la ejecución ya que como indica la documentación se puede utilizar la que ya se encuentra en el Dockerfile.
+Para que nuestra nueva app de heroku construya una imagen docker añadimos el heroku.yml, donde le indicamos en la parte de build que usaremos el Dockerfile que se encuentra en este directorio y en la parte de run la orden que debe de ejecutar para lanzar la app.
+En el heroku.yml en caso de no indicar ninguna orden para la ejecución en la sección run se utiliza la especificada en la parte de CMD del Dockerfile.
+
+Nuestra nueva app esta conectada también con nuestro repositorio de GitHub de la siguiente forma:
+![alt text](https://github.com/antonioJ95/ProyectoIV/tree/master/docs/appsconf.png)
+
+Pero para que heroku utilice el heoroku.yml en lugar del procfile, debemos de indicárselo desde terminal usando el heroku cli.
+
+Esto se realiza usando el siguiente comando:
+~~~
+heroku stack:set container
+~~~
+Con esto le indicamos a Heroku que el desliegue de la app  se realizará usando contenedores y pillando así el heroku.yml.
+
+Podemos ver que esto se ha realizado correctamente en la información de nuestra nueva app desde el dashboard de Heroku:
+![alt text](https://github.com/antonioJ95/ProyectoIV/tree/master/docs/herokuStack.png)
+
+O desde nuestro ordenador usando el comando:
+~~~
+heroku apps:info docker-iv-project
+~~~
+![alt text](https://github.com/antonioJ95/ProyectoIV/tree/master/docs/apsterminal.png)
+
+Donde en ambas partes vemos que en Stack pone container.
 
 
 ## Licencia
