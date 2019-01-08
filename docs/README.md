@@ -55,13 +55,13 @@ Con esta cofiguración ya tendríamos asegurado que este repositorio de DockerHu
 [Documentación seguida](https://devcenter.heroku.com/articles/build-docker-images-heroku-yml)
 
 Hemos creado otra app en heroku para desplegar la usando contenedores.
-![img](https://github.com/antonioJ95/ProyectoIV/blob/master/docs/aps.png)
+![img](aps.png)
 
 Para que nuestra nueva app de heroku construya una imagen docker añadimos el heroku.yml, donde le indicamos en la parte de build que usaremos el Dockerfile que se encuentra en este directorio y en la parte de run la orden que debe de ejecutar para lanzar la app.
 En el heroku.yml en caso de no indicar ninguna orden para la ejecución en la sección run se utiliza la especificada en la parte de CMD del Dockerfile.
 
 Nuestra nueva app esta conectada también con nuestro repositorio de GitHub de la siguiente forma:
-![img](https://github.com/antonioJ95/ProyectoIV/blob/master/docs/appsconf.png)
+![img](appsconf.png)
 
 Pero para que heroku utilice el heoroku.yml en lugar del procfile, debemos de indicárselo desde terminal usando el heroku cli.
 
@@ -72,13 +72,13 @@ heroku stack:set container
 Con esto le indicamos a Heroku que el desliegue de la app  se realizará usando contenedores y pillando así el heroku.yml.
 
 Podemos ver que esto se ha realizado correctamente en la información de nuestra nueva app desde el dashboard de Heroku:
-![img](https://github.com/antonioJ95/ProyectoIV/blob/master/docs/herokuStack.png)
+![img](herokuStack.png)
 
 O desde nuestro ordenador usando el comando:
 ~~~
 heroku apps:info docker-iv-project
 ~~~
-![img](https://github.com/antonioJ95/ProyectoIV/blob/master/docs/apsterminal.png)
+![img](apsterminal.png)
 
 Donde en ambas partes vemos que en Stack pone container.
 
