@@ -82,6 +82,59 @@ heroku apps:info docker-iv-project
 
 Donde en ambas partes vemos que en Stack pone container.
 
+### Despliegue en IaaS:
+Este último hito consiste en realizar un despliegue automático en un IaaS, en mi caso será usando Google Compute Engine de Google Cloud.
+Para ello nos hemos creado una cuenta y utilizado el proyecto que viene creado por defecto, My First Proyect.
+<img src="infoProyecto.png"/>
+En esta imagen podemos ver el id del proyecto, necesario para permitir el funcionamiento de vagrant.
+
+Una vez encontrándonos dentro de Google Cloud debemos entrar a la parte de Compute Engine, que nos permite crear las IaaS necesarias.
+Para obtener credenciales necesarios para operar con el proyecto, debemos de crearnos una cuenta de servicio nueva asociada al proyecto y descargarnos la clave.
+<img src="claveCredenciales.png"/>
+También debemos de obtener el correo relacionado a este servicio.
+Ya tenemos un proyecto en google compute engine y la clave para poder tener acceso a las IaaS.
+Ahora debemos de darnos acceso ssh, por lo que creamos una clave ssh con ssh-keygen y la subimos a GCE.
+Por lo que pasamos a la configuración del vagrantfile para configurar las IaaS.
+
+Para ello empezamos por instalar el plugin (https://github.com/mitchellh/vagrant-google) desarrollado para vagrant el cual permite controlar y provisionar instancias de GCE. Los pasos de configuración básica son seguidos del propio tutorial que nos proporcionan.
+
+Los pasos seguidos para configurar el vagrantfile(https://github.com/antonioJ95/ProyectoIV/blob/master/Vagrantfile) han sido:
+ - la indicación de la versión de vagrant utilizada, la 2.
+ - Indicación el uso de la dummy box de google.
+ - Empezamos con la configuración específica para google como proveedor:
+   - Usamos los credenciales obtenidos antes para la autenticación de google.
+   - Indicamos la imagen de la cual se tenga que bajar la versión más reciente.
+   - Indicamos el tipo de máquina que vamos a utilizar, en nuestro caso la n1-standard-1 (1 vCPU, 3,75 GB)
+   - Nombre de la instancia.
+   - Zona donde se creará la instancia.
+   - Tag ['http-server'](https://cloud.google.com/vpc/docs/add-remove-network-tags) con el que permitimos las conexiones http por el puerto 80 para nuestra instancia.
+   - Usamos nuestros credenciales para la configuración ssh.
+ - Configuración de ansible como el encargado de provisionar nuestra instancia:
+ - En este apartado configuramos ansible permitiendo modo root, indicando donde se cuentra el script de provisionamiento y el nivel de detalle a mostrar con la ejecución.
+
+Una vez hecho esto podemos pasar a la configuración de ansible en nuestro fichero playbook.yml(https://github.com/antonioJ95/ProyectoIV/blob/master/provision/playbook.yml).
+
+Con este fichero vamos a indicar la configuración necesaria para el correcto funcionamiento de la instancia para permitir desplegar nuestra aplicación.
+
+Para ello instalamos primero git y pip3.
+Luego pasamos a clonar el repositorio en la carpeta ProyectoIV.
+Por último instalamos el archivo requirements con pip3 asegurando con esto que tenemso todos los recursos necesario para el despliegue de nuestra aplicación.
+
+Por último llegamos a la parte de realizar el despliegue de la aplicación y para ello vamos a utilizar flightplan.
+Con nuestro archivo flightplan.js(https://github.com/antonioJ95/ProyectoIV/blob/master/despliegue/flightplan.js) vamos a indicar los comandos a ser realizados tanto en la instancia como en nuestro local para el despliegue y control de la aplicación.
+
+Para usar flightplan que se trata de una biblioteca de node.js tenemso que tener instalado como es lógico node, npm y con este instalar flightplan.
+
+Lo primero a realizar en el archivo es incluir esta librería, luego pasamos a identificar el que será el objetivo (host) que se verá afectado por los comandos.
+Para ello basta con indicar su ip externa, el usuario con el que nos identificamos e indicarle con la variable de entorno la autenticación ssh. Esta variable usa las claves que se encuentran en ~/.ssh/ por lo que es necesario no haber movido las claves generadas de ahí.
+
+Ahora pasamos a definir las ordene:
+ - Orden exec: En este caso la orden la ejecutamos como es lógico usando remote, y le indicamos que encontrandose en la carpeta del proyecto utilice gunicorn para desplegar y mande la salida tanto de error como estándar a un fichero para poder tener un log de esto.
+ - Orden kill: Orden ejecutada en remoto para acabar el despliegue haciendo uso de la orden kill.
+ - Orden logs: Orden ejecutada en local para obtener los archivos que se encuentren en tmp, donde guardamos el log.
+
+ Para esta última orden antes he tenido que descargar gcloud en local para que pudiese funcionar correctamente. 
+
 
 ## Licencia
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/antonioJ95/ProyectoIV/blob/master/LICENSE)
