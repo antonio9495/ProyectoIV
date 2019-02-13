@@ -13,8 +13,6 @@ El proyecto completo sobre el que podría ir sería una aplicación de agenda di
 
 - Framework: [Flask](http://flask.pocoo.org/).
 
-- Base de datos: [MongoDB](https://www.mongodb.com/).
-
 - Automatización: [Heroku](https://www.heroku.com/), [Docker](https://www.docker.com/) y [Travis](https://travis-ci.org/).
 
 - Creación de test: [Pytest](https://docs.pytest.org/en/latest/).
